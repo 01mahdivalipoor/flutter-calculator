@@ -46,7 +46,13 @@ class History extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   tileColor: buttonsBackgroundColor,
-                  title: Text(result[i].title),
+                  title: Text(
+                    result[i].title,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline3!
+                        .copyWith(fontSize: 26.0),
+                  ),
                   subtitle: Text(result[i].subtitle),
                 );
               },

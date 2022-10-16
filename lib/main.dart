@@ -6,7 +6,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:calculator/imports.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,8 +24,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           scaffoldBackgroundColor: backgroundColor,
-          brightness: Brightness.dark,
-          accentColor: yellowColor,
           appBarTheme: AppBarTheme(
             color: backgroundColor,
             elevation: 0.0,
@@ -34,6 +31,7 @@ class MyApp extends StatelessWidget {
           textTheme: TextTheme(
             headline3: TextStyle(
               fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
             caption: TextStyle(
               fontWeight: FontWeight.w500,
@@ -41,6 +39,8 @@ class MyApp extends StatelessWidget {
               fontSize: 18.0,
             ),
           ),
+          colorScheme:
+              ColorScheme.fromSwatch().copyWith(secondary: yellowColor),
         ),
         routes: {
           '/': (context) => Calculator(),
